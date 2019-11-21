@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Tareas from '../views/Tareas.vue'
+import Libros from '../views/Libros.vue'
+import CrearLibro from '../components/CrearLibro'
+import EditarLibro from '../components/EditarLibro'
 import CrearTarea from '../components/CrearTarea'
 import EditarTarea from '../components/EditarTarea'
 
@@ -12,6 +15,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/libros',
+    name: 'libros',
+    component: Tareas
   },
   {
     path: '/tareas',

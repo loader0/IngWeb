@@ -5,49 +5,49 @@ import Axios from 'axios';
 
 Vue.use(Vuex)
 
-const apiURLTareas = 'api/Tareas';
+const apiURLLibros = 'api/Libros';
 
 
 export default new Vuex.Store({
   state: {
-    tareas: [],
-    tareaSeleccionada: null,
+    libros: [],
+    libroSeleccionada: null,
     otracosa: []
   },
   getters: {
-    tareas: state => state.tareas,
-    tareaSeleccionada : state => state.tareaSeleccionada
+    libros: state => state.libros,
+    libroSeleccionada : state => state.libroSeleccionada
   },
   mutations: {
-    setTareas(state, data) {
-      state.tareas = data;
+    setLibros(state, data) {
+      state.libros = data;
     },
-    setSeleccionarTarea(state, tarea){
-      state.tareaSeleccionada = tarea;
+    setSeleccionarLibro(state, libro){
+      state.libroSeleccionada = libro;
     }
   },
   actions: {
-    seleccionarTarea(context, tarea){
-      context.commit("setSeleccionarTarea", tarea);
+    seleccionarTarea(context, libro){
+      context.commit("setSeleccionarLibro", libro);
     },
-    async leerTareas(context) {
-      console.log("leyendo tareas");
-      let tareasData = (await Axios.get(apiURLTareas)).data;
-      console.log("se leyeron tareas", tareasData);
-      context.commit("setTareas", tareasData);
+    async leerLibro(context) {
+      console.log("leyendo libros");
+      let tareasData = (await Axios.get(apiURLLibros)).data;
+      console.log("se leyeron libros", librosData);
+      context.commit("setLibros", librosData);
     },
-    async agregarTarea(context, nuevaTarea) {
-      let grabar = (await Axios.post(apiURLTareas, nuevaTarea));
-      await context.dispatch('leerTareas');
+    async agregarLibro(context, nuevaLibro) {
+      let grabar = (await Axios.post(apiURLLibros, nuevaLibro));
+      await context.dispatch('leerLibro');
       
     },
-    async actualizarTarea(context, tareaEditar){
-      let grabar = (await Axios.put(apiURLTareas+"/"+tareaEditar.id, tareaEditar));
-      await context.dispatch('leerTareas');
+    async actualizarLibro(context, libroEditar){
+      let grabar = (await Axios.put(apiURLLibros+"/"+libroEditar.id, libroEditar));
+      await context.dispatch('leerLibro');
     },
-    async borrarTarea(context, tareaABorrar){
-      let grabar = (await Axios.delete(apiURLTareas+"/"+tareaABorrar.id));
-      await context.dispatch('leerTareas');
+    async borrarLibro(context, libroABorrar){
+      let grabar = (await Axios.delete(apiURLLibros+"/"+libroABorrar.id));
+      await context.dispatch('leerLibro');
     }
   },
   modules: {
