@@ -40,11 +40,11 @@ export default {
   },
   
   methods: {
-    editar(libro){
-         this.seleccionarLibro(libro);
+    editar(Libros){
+         this.seleccionarLibro(Libros);
     },
-    borrar(libro){
-      this.borrarLibro(libro);
+    borrar(libros){
+      this.borrarLibro(libros);
     },
     mostrarNueva(){
       this.seleccionarLibro(null);

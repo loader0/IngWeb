@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     async actualizarClick() {
-      await this.actualizarTarea({
+      await this.actualizarLibro({
         id : this.libroSeleccionada.id,
         genero: this.libroSeleccionada.genero,
         titulo: this.libroSeleccionada.titulo,

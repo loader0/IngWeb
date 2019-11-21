@@ -32,7 +32,7 @@ export default new Vuex.Store({
     },
     async leerLibro(context) {
       console.log("leyendo libros");
-      let tareasData = (await Axios.get(apiURLLibros)).data;
+      let librosData = (await Axios.get(apiURLLibros)).data;
       console.log("se leyeron libros", librosData);
       context.commit("setLibros", librosData);
     },

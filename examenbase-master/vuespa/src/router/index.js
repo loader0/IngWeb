@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/libros',
     name: 'libros',
-    component: Tareas
+    component: Libros
   },
   {
     path: '/tareas',

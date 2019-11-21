@@ -21,14 +21,14 @@ namespace src.Controllers
         }
         // GET: api/Tareas
         [HttpGet]
-        public ActionResult<IEnumerable<Tarea>> Get()
+        public ActionResult<IEnumerable<Tarea>> Get2()
         {
             return db;
         }
 
         // GET: api/Tareas/5
-        [HttpGet("{id}", Name = "Get")]
-        public ActionResult<Tarea> Get(int id)
+        [HttpGet("{id}", Name = "Get2")]
+        public ActionResult<Tarea> Get2(int id)
         {
             var t = db.FirstOrDefault(ta => ta.Id == id);
             if (t == null)
